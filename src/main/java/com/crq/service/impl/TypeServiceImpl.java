@@ -7,14 +7,11 @@ import com.crq.service.TypeService;
 import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
+import javax.transaction.Transactional;
 import java.lang.reflect.InvocationTargetException;
-import java.util.List;
 
 /**
  * TypeServiceImpl
@@ -53,20 +50,6 @@ public class TypeServiceImpl implements TypeService {
   public Page<Type> listType(Pageable pageable) {
     return typeRepository.findAll(pageable);
   }
-
-  @Override
-  public List<Type> listType() {
-    return typeRepository.findAll();
-  }
-
-  @Transactional
-  @Override
-  public List<Type> listTypeTop(Integer size) {
-    Sort sort = Sort.by(Sort.Direction.DESC, "blogs.size");
-    Pageable pageable = PageRequest.of(0, size, sort);
-    return typeRepository.findTop(pageable);
-  }
-
 
   @Transactional
   @Override

@@ -14,15 +14,9 @@ spring:
     password: root
   jpa:
     hibernate:
-<<<<<<< HEAD
-#自动更新表结构(只要数据库的字段名发生改变,则实体类自动更新字段)
-      ddl-auto: update
-#sql语句输出到控制台与日志中
-=======
       #自动更新表结构(只要数据库的字段名发生改变,则实体类自动更新字段)
       ddl-auto: update
     #sql语句输出到控制台与日志中
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
     show-sql: true
   mvc:
     format:
@@ -54,35 +48,27 @@ spring:
       min-idle: 0
   # 连接超时时间（毫秒）
   timeout: 5000ms
+  #配置国际化消息源(应用场景后台通过重定向Thymeleaf时,出现??message_zh_CN??字样)
+  messages:
+    basename: messages
+    encoding: utf-8
 
 
 
-<<<<<<< HEAD
+
 #mybatis
-=======
-
-
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 mybatis:
   #实体类取别名
   type-aliases-package: com.crq.bean
   global-config:
     db-config:
-<<<<<<< HEAD
-    # id生成策略 auto为数据库自增
-=======
       # id生成策略 auto为数据库自增
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
       id-type: auto
   #扫描mapper
   mapper-locations: classpath:mapper/*Mapper.xml
   configuration:
     #驼峰命名
-<<<<<<< HEAD
     map-underscore-to-camel-case: true
-=======
-    map-underscore-to-camel-case: false
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
     # 日志
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
