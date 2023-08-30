@@ -1,0 +1,20 @@
+#激活环境
+spring:
+  thymeleaf:
+    mode: HTML
+    cache: false
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+  profiles:
+    active: test
+  mvc:
+    static-path-pattern: /static/**
+  #解决升级spring Boot2.6后,因循环引用导致启动时报错的问题
+  main:
+    allow-circular-references: true
+
+
+image:
+  path: F:/image
+

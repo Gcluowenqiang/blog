@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head th:replace = "_fragments :: head(~{::title})">
+  <meta charset = "UTF-8">
+  <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+  <title>博客详情</title>
+  <link href = "../static/css/index.css" rel = "stylesheet">
+  <link href = "../static/css/typo.css" rel = "stylesheet">
+  <link href = "../static/css/animate.css" rel = "stylesheet">
+  <link href = "../static/lib/prism/prism.css" rel = "stylesheet">
+  <link href = "../static/lib/tocbot/tocbot.css" rel = "stylesheet">
+  <link href = "//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css" rel = "stylesheet">
+</head>
+<body>
+
+<!-- 导航 -->
+<nav th:replace = "_fragments :: menu(2)" class = "ui inverted attached segment m-padded-tb-mini m-shadow-small">
+  <div class = "ui container">
+    <!--inverted 白色字体  stackable--响应式-堆叠 inverted--悬浮效果-->
+    <div class = "ui inverted secondary stackable menu">
+      <h2 class = "ui teal header item">BLOG</h2>
+      <a class = "item m-item m-mobile-hide" href = "#"><i class = "home icon"></i>首页</a>
+      <a class = "item m-item m-mobile-hide" href = "#"><i class = "idea icon"></i>分类</a>
+      <a class = "item m-item m-mobile-hide" href = "#"><i class = "tags icon"></i>标签</a>
+      <a class = "item m-item m-mobile-hide" href = "#"><i class = "clone icon"></i>归档</a>
+      <a class = "item m-item m-mobile-hide" href = "#"><i class = "info icon"></i>关于我</a>
+      <div class = "right item m-item m-mobile-hide">
+        <div class = "ui icon inverted transparent input">
+          <!--transparent透明-->
+          <input placeholder = "Search..." type = "text">
+          <i class = "search link icon"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- inverted--反转 -->
+  <a class = "ui menu toggle black icon button m-right-top m-mobile-show" href = "#">
+    <i class = "sidebar icon"></i>
+  </a>
+</nav>
+
+
+<!-- 中间部分 -->
+<div class = "m-container-small m-padded-tb-large animated fadeIn" id = "waypoint">
+  <div class = "ui container">
+    <div class = "ui top attached segment">
+      <!-- 头部 -->
+      <div class = "ui horizontal link list">
+        <div class = "item">
+          <img alt = "" class = "ui avatar image"
+               src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg">
+          <div class = "content"><a class = "header m-text-thin" href = "#">多特蒙德</a></div>
+        </div>
+        <div class = "item">
+          <i class = "calendar icon"></i> 2018-10-10
+        </div>
+        <div class = "item">
+          <i class = "eye icon"></i> 2342
+        </div>
+      </div>
+    </div>
+    <!-- 图片 -->
+    <div class = "ui attached segment">
+      <img alt = "" class = "ui fluid rounded image"
+           src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg">
+    </div>
+    <!-- 内容区域 -->
+    <div class = "ui attached padded segment">
+      <div class = "ui right aligned basic segment">
+        <div class = "ui orange basic label">原创</div>
+      </div>
+      <h2 class = "ui center aligned header">足球世界</h2>
+      <div class = "typo typo-selection js-toc-content m-padded-lr-responsive m-padded-tb-large" id = "content">
+        <h2 id = "session1">表格区域</h2>
+        <table class = "ui table" summary = "Type.css 排版篇重点">
+          <thead>
+          <tr>
+            <th>类型</th>
+            <th>语义</th>
+            <th>标签</th>
+            <th>注意点</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <tb>类型</tb>
+            <tb>类型</tb>
+            <tb>类型</tb>
+            <tb>类型</tb>
+          </tr>
+          </tbody>
+        </table>
+
+        <!-- 代码高亮-->
+        <pre><code class = "language-css">p {color : red}</code></pre>
+        <pre><code class = "language-css">p {color : red}</code></pre>
+
+        <h2 id = "session2">内容区域2</h2>
+        <p>
+          人人都渴望成功，而且是越快速越好，谁想失败？且失败还要趁早？其实道理很简单，你一定很早就知道。简单的可能你都不会相信，甚至不屑。是什么呢？
+          失败乃成功之母
+          这个我们从小就知道的道理。但是这句话的意思你真的理解吗？《汉语成语大词典》中对“失败乃成功之母”是这样解释的：母，先导。它指人唯有善于从失败中吸取经验教训，才能获得成功。失败是成功的先导，失败是成功的基础。（母的意义不是母亲而是基础）。
+          难道所有成功必须经历失败吗？
+          你难免会有这样的疑问？那我们这样想一下，古往今来有谁轻而易举的获得过很大的成功？再者说不费点劲，不经历过失败的就能轻松做成的事儿，真的还有那么大的价值吗？有一定价值的事情不是那么轻易就能做成，能轻易做成的事情，很多人都可以做成，价值某种程度上就会减小。所以我这样理解：有价值的成功，不会轻易获得，必然要先经历失败，再翻译下就是：失败是成功的起点，没有经历失败之前你都没有进入通往成功的跑道，所以某种意义上来说，失败是必然存在的，是通往成功的阶梯。既然这样，我们有什么理由不坦然面对失败，甚至高兴的去面对失败呢？
+          失败要趁早，越早失败才有可能早点遇到成功，那么话又说回来，失败难到不是很容易就能做到的事情吗？但是你是否想过，一件事情失败的前提条件是实实在在的去做这件事儿，这样你才有了失败的机会，有了失败，你才有了吸取教训的机会，才有希望遇到成功。任何事儿不去做，失败你都没得机会，就别想要成功啦。快速开始，才是开始成功的正确姿势，如何快速开始呢？
+          不要想太多，勇敢尝试
+          头天晚上想了千条路，早上醒来走老路。总有那么一些人（有时候我也是这样）永远让事情止于意淫。而且还会找各种理由说服自己：“还没准备好”，“这样做到底行不行？”，“有人成功过没”…
+          永远迈不出去第一步，所以就沦为“凡人”。人生苦短，不要想太多，想好了就去做，这样才有成功的机会
+          放下你臆想的完美主义
+          臆想的完美主义，只会让你更纠结，更痛苦，让你在成功的路上越走越远。
+          高中那会总是企图做一个完美学习计划，然后臆想通过执行计划可以把成绩飞速提升，然而都以失败告终，因为一直在做计划的路上，要不就是在修改计划的路上。
+          任何事情不会一下子就会做到极致，谁又是一开始就能把事情做到完美呢。只要开始做，哪怕一天一点点，都会离成功越来越近。这些你都懂，然卵用。因为你没有放下臆想的完美主义。赶快，搞起来吧，骚年
+          专注目标，不要朝三暮四
+          正确的做事方法，要专注于眼前的目标，不要做着这个事情，还想着其他的事情，搞得啥都没做好，还浪费了我们宝贵的注意力。集中注意力先把你眼前力所能及的事情做好，让自己得到正反馈，这样才能得到鼓励，动力越来越足，事情越做越好。否则，朝三暮四去了，会把你空虚一大把。
+        </p>
+        <h2 id = "session3">内容区域1.2</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut aspernatur placeat natus fugiat
+          voluptatem voluptates quisquam autem at modi? Consequuntur ab eligendi, natus voluptate praesentium
+          reiciendis. Doloribus velit odit porro.
+          Nihil eveniet vitae illo cumque quisquam itaque quis, voluptatem fugiat alias inventore soluta unde
+          perspiciatis, aliquid dolorem possimus iure, a ducimus dolore sequi. Doloremque vero architecto
+          praesentium ex iusto eaque!
+        </p>
+        <h3 id = "session3-1">内容区域3-1</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum eum unde optio quia corrupti iure
+          saepe hic id laborum odit animi dignissimos aspernatur minus doloremque, accusantium doloribus
+          molestias facilis sunt?
+          Sunt eos repellat sit provident odio quidem vel qui dolores autem, omnis reprehenderit odit nobis
+          velit veritatis aspernatur id. Illo iusto a amet quos impedit. Quibusdam autem velit voluptas
+          veniam!
+          Itaque fugit, reiciendis eius dolore vitae, quis dignissimos harum consectetur, odit in
+          reprehenderit libero animi id cupiditate sunt deleniti molestiae quia aliquam quos tempore ipsam? Ut
+          possimus necessitatibus quis similique.
+          Cumque minus iure tempora quibusdam fuga voluptate! Libero, aperiam, alias veniam aliquid beatae
+          delectus nam consequuntur quos, asperiores quo distinctio. Aspernatur ex eaque maiores architecto
+          iusto voluptate enim perspiciatis fuga?
+        </p>
+      </div>
+      <!-- 标签 -->
+      <div class = "m-padded-lr">
+        <div class = "ui basic teal left pointing label">方法论</div>
+      </div>
+      <!-- 赞善 -->
+      <div class = "ui center aligned basic segment">
+        <button class = "ui orange basic circular button" id = "payButton">赞赏</button>
+      </div>
+      <div class = "ui payQR flowing popup transition hidden">
+        <div class = "ui orange basic label">
+          <div class = "ui images" style = " font-size: inherit !important; ">
+            <div class = "image">
+              <img alt = "" class = "ui rounded bordered image" src = "../static/images/u11.jpg"
+                   style = "width: 120px">
+              <div>支付包</div>
+            </div>
+            <div class = "image">
+              <img alt = "" class = "ui  bordered image rounded" src = "../static/images/u11.jpg"
+                   style = "width: 120px">
+              <div>微信</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class = "ui attached positive message">
+      <div class = "ui middle aligned grid">
+        <div class = "eleven wide column">
+          <ul class = "list">
+            <li>作者：crqYUE (联系作者)</li>
+            <li>发布时间：</li>
+            <li>版权声明</li>
+            <li>作者：crqYUE (联系作者)</li>
+          </ul>
+        </div>
+        <div class = "five wide column">
+          <img alt = "" class = "ui right floated rounded bordered image" src = "../static/images/u11.jpg"
+               style = "width:110px;">
+        </div>
+      </div>
+    </div>
+    <div class = "ui bottom attached segment" id = "comment-container">
+      <div class = "ui teal segment">
+        <div class = "ui comments">
+          <h3 class = "ui dividing header">Comments</h3>
+          <div class = "comment">
+            <a class = "avatar">
+              <img src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg">
+            </a>
+            <div class = "content">
+              <a class = "author">Matt</a>
+              <div class = "metadata">
+                <span class = "date">Today at 5:42PM</span>
+              </div>
+              <div class = "text">
+                How artistic!
+              </div>
+              <div class = "actions">
+                <a class = "reply">回复</a>
+              </div>
+            </div>
+          </div>
+          <div class = "comment">
+            <a class = "avatar">
+              <img src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg">
+            </a>
+            <div class = "content">
+              <a class = "author">Elliot Fu</a>
+              <div class = "metadata">
+                <span class = "date">Yesterday at 12:30AM</span>
+              </div>
+              <div class = "text">
+                <p>This has been very useful for my research. Thanks as well!</p>
+              </div>
+              <div class = "actions">
+                <a class = "reply">回复</a>
+              </div>
+            </div>
+            <div class = "comments">
+              <div class = "comment">
+                <a class = "avatar">
+                  <img src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg">
+                </a>
+                <div class = "content">
+                  <a class = "author">Jenny Hess</a>
+                  <div class = "metadata">
+                    <span class = "date">Just now</span>
+                  </div>
+                  <div class = "text">
+                    Elliot you are always so right :)
+                  </div>
+                  <div class = "actions">
+                    <a class = "reply">回复</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class = "comment">
+            <a class = "avatar">
+              <img src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg">
+            </a>
+            <div class = "content">
+              <a class = "author">Joe Henderson</a>
+              <div class = "metadata">
+                <span class = "date">5 days ago</span>
+              </div>
+              <div class = "text">
+                Dude, this is awesome. Thanks so much
+              </div>
+              <div class = "actions">
+                <a class = "reply">回复</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 表单 -->
+      <div class = "ui form">
+        <div class = "field">
+          <textarea name = "content" placeholder = "请输入评论信息..."></textarea>
+        </div>
+        <div class = "fields">
+          <div class = "field m-mobile-wide m-margin-bottom-small">
+            <div class = "ui left icon input">
+              <i class = "user icon"></i>
+              <input name = "nickname" placeholder = "姓名" type = "text">
+            </div>
+          </div>
+          <div class = "field m-mobile-wide m-margin-bottom-small">
+            <div class = "ui left icon input">
+              <i class = "mail icon"></i>
+              <input name = "email" placeholder = "邮箱" type = "text">
+            </div>
+          </div>
+          <div class = "field m-mobile-wide m-margin-bottom-small">
+            <button class = "ui teal button m-mobile-wide"><i class = "edit icon"></i>发布评论</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class = "m-padded m-fixed m-right-bottom" id = "toolbar">
+  <div class = "ui vertical icon buttons">
+    <button class = "ui teal toc button" type = "button">目录</button>
+    <!-- 锚链接 -->
+    <a class = "ui teal button" href = "#comment-container">留言</a>
+    <button class = "ui wechat icon button"><i class = "weixin icon"></i></button>
+    <div class = "ui icon button" id = "toTop-button"><i class = "chevron up icon"></i></div>
+  </div>
+</div>
+
+
+<div class = "ui toc-container flowing popup transition hidden" style = "width: 250px !important;">
+  <ol class = "js-toc">
+
+  </ol>
+</div>
+
+
+<div class = "ui wechat-qr flowing popup transition hidden" id = "qrcode" style = "width: 130px !important;">
+  <!-- <img src = "./static/images/u11.jpg" alt = "" class = "ui rounded image" style="width: 120px;"> -->
+</div>
+
+
+<!-- 底部footer -->
+<footer class = "ui inverted vertical segment m-padded-tb-massive m-shadow-small">
+  <div class = "ui center aligned container">
+    <div class = "ui inverted divided stackable grid">
+      <div class = "three wide column">
+        <div class = "ui inverted link list">
+          <div class = "item">
+            <img alt = "" class = "ui rounded image" src = '../static/images/u11.jpg' style = "width: 110px;">
+          </div>
+        </div>
+      </div>
+      <div class = "three wide column">
+        <h4 class = "ui inverted header m-text-thin m-text-spaced">最新博客</h4>
+        <div class = "ui inverted link list">
+          <a class = "item" href = "#">用户故事（User Story）</a>
+          <a class = "item" href = "#">关于刻意练习的清单</a>
+          <a class = "item" href = "#">失败要趁早</a>
+        </div>
+      </div>
+      <div class = "three wide column">
+        <h4 class = "ui inverted header  m-text-thin m-text-spaced">联系我</h4>
+        <div class = "ui inverted link list">
+          <a class = "item" href = "#">Email：lirenmi@163.com</a>
+          <a class = "item" href = "#">QQ：865729312</a>
+        </div>
+      </div>
+      <div class = "seven wide column">
+        <h4 class = "ui inverted header m-text-thin m-text-spaced">Blog</h4>
+        <div class = "ui inverted link list">
+          <p class = "m-opacity-mini m-text-thin m-text-spaced">
+            这是我的个人博客、会分享关于编程、写作、思考相关的任何内容，希望可以给来到这儿的人有所帮助...</p>
+        </div>
+      </div>
+    </div>
+    <div class = "ui inverted section divider "></div>
+    <p class = "m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2016 - 2017 Lirenmi Designed by Lirenmi</p>
+  </div>
+</footer>
+
+
+<script src = "//cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src = "//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<script src = "//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+
+<script src = "../static/lib/prism/prism.js"></script>
+<script src = "../static/lib/tocbot/tocbot.min.js"></script>
+<script src = "../static/lib/qrcode/qrcode.min.js"></script>
+<script src = "../static/lib/waypoints/jquery.waypoints.min.js"></script>
+
+<script>
+	$(".menu.toggle").click(function () {
+		$(".m-item").toggleClass('m-mobile-hide');
+	});
+
+	$('#payButton').popup({
+		popup: $('.payQR.popup'),
+		on: 'click',
+		position: 'bottom center'
+	});
+
+	$('.toc.button').popup({
+		popup: $('.toc-container.popup'),
+		on: 'click',
+		position: 'left center'
+	});
+
+	// 文本排版
+	tocbot.init({
+		tocSelector: '.js-toc',
+		contentSelector: '.js-toc-content',
+		headingSelector: 'h1,h2,h3'
+	});
+
+
+	$('.wechat').popup({
+		popup: $('.wechat-qr'),
+		position: 'left center',
+	});
+
+
+	// 二维码生成器
+	var qrcode = new QRCode("qrcode", {
+		text: "http://jindo.dev.naver.com/collie",
+		width: 110,
+		height: 110,
+		colorDark: "#000000",
+		colorLight: "#ffffff",
+		correctLevel: QRCode.CorrectLevel.H
+	});
+
+
+	// 平滑检测
+	$('#toTop-button').click(function () {
+		$(window).scrollTo(0, 500);
+	});
+
+	// 滚动监测
+	var waypoint = new Waypoint({
+		element: document.getElementById('waypoint'),
+		handler: function (direction) {
+			if (direction == 'down') {
+				$('#toolbar').show(100);
+			} else {
+				$('#toolbar').hide(500);
+			}
+			console.log('Scrolled to waypoint!  ' + direction);
+		}
+	});
+
+
+</script>
+
+
+</body>
+</html>
