@@ -12,12 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 
 /**
-<<<<<<< HEAD
- * Created by limi on 2017/10/13.
-=======
  * @author limi
  * @date 2017/10/13
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
  */
 @Aspect
 @Component
@@ -25,11 +21,7 @@ public class LogAspect {
 
   private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-<<<<<<< HEAD
-  @Pointcut("execution(* com.lrm.web.*.*(..))")
-=======
   @Pointcut("execution(* com.crq.controller.*.*(..))")
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
   public void log() {
   }
 
@@ -37,10 +29,7 @@ public class LogAspect {
   @Before("log()")
   public void doBefore(JoinPoint joinPoint) {
     ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-<<<<<<< HEAD
-=======
     assert attributes != null;
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
     HttpServletRequest request = attributes.getRequest();
     String url = request.getRequestURL().toString();
     String ip = request.getRemoteAddr();
@@ -60,19 +49,11 @@ public class LogAspect {
     logger.info("Result : {}", result);
   }
 
-<<<<<<< HEAD
-  private class RequestLog {
-    private String url;
-    private String ip;
-    private String classMethod;
-    private Object[] args;
-=======
   private static class RequestLog {
     private final String url;
     private final String ip;
     private final String classMethod;
     private final Object[] args;
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 
     public RequestLog(String url, String ip, String classMethod, Object[] args) {
       this.url = url;

@@ -57,6 +57,18 @@ public class Blog {
   @OneToMany(mappedBy = "blog")
   private List<Comment> comments = new ArrayList<>();
 
+  //不进行数据库映射
+  @Transient
+  private String tagIds;
+
+  public String getTagIds() {
+    return tagIds;
+  }
+
+  public void setTagIds(String tagIds) {
+    this.tagIds = tagIds;
+  }
+
   public Blog() {
   }
 
@@ -198,6 +210,29 @@ public class Blog {
     this.comments = comments;
   }
 
+  public void init() {
+    this.tagIds = tagsToIds(this.getTags());
+  }
+
+  //1,2,3
+  private String tagsToIds(List<Tag> tags) {
+    if (!tags.isEmpty()) {
+      StringBuffer ids = new StringBuffer();
+      boolean flag = false;
+      for (Tag tag : tags) {
+        if (flag) {
+          ids.append(",");
+        } else {
+          flag = true;
+        }
+        ids.append(tag.getId());
+      }
+      return ids.toString();
+    } else {
+      return tagIds;
+    }
+  }
+
   @Override
   public String toString() {
     return "Blog{" +
@@ -216,5 +251,5 @@ public class Blog {
       ", updateTime=" + updateTime +
       '}';
   }
-  
+
 }

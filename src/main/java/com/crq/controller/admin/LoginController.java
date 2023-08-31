@@ -45,6 +45,7 @@ public class LoginController {
     //进行用户信息存储
     session.setAttribute("user", user);
     return "/admin/index";
+//    return "redirect:/admin/blogs";
   }
 
   /*注销用户*/
