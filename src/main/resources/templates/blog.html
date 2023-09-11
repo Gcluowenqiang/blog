@@ -1,37 +1,20 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html lang = "en">
-=======
 <html lang = "en" xmlns:th = "http://www.w3.org/1999/xhtml">
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 <head th:replace = "_fragments :: head(~{::title})">
   <meta charset = "UTF-8">
   <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
   <title>博客详情</title>
-<<<<<<< HEAD
-  <link href = "../static/css/index.css" rel = "stylesheet">
-  <link href = "../static/css/typo.css" rel = "stylesheet">
-  <link href = "../static/css/animate.css" rel = "stylesheet">
-  <link href = "../static/lib/prism/prism.css" rel = "stylesheet">
-  <link href = "../static/lib/tocbot/tocbot.css" rel = "stylesheet">
-  <link href = "//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css" rel = "stylesheet">
-=======
   <link href = "//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css" rel = "stylesheet">
   <link href = "/static/css/index.css" rel = "stylesheet">
   <link href = "/static/css/typo.css" rel = "stylesheet">
   <link href = "/static/css/animate.css" rel = "stylesheet">
   <link href = "/static/lib/prism/prism.css" rel = "stylesheet">
   <link href = "/static/lib/tocbot/tocbot.css" rel = "stylesheet">
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 </head>
 <body>
 
 <!-- 导航 -->
-<<<<<<< HEAD
-<nav th:replace = "_fragments :: menu(2)" class = "ui inverted attached segment m-padded-tb-mini m-shadow-small">
-=======
 <nav th:replace = "_fragments :: menu(1)" class = "ui inverted attached segment m-padded-tb-mini m-shadow-small">
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
   <div class = "ui container">
     <!--inverted 白色字体  stackable--响应式-堆叠 inverted--悬浮效果-->
     <div class = "ui inverted secondary stackable menu">
@@ -65,16 +48,6 @@
       <div class = "ui horizontal link list">
         <div class = "item">
           <img alt = "" class = "ui avatar image"
-<<<<<<< HEAD
-               src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg">
-          <div class = "content"><a class = "header m-text-thin" href = "#">多特蒙德</a></div>
-        </div>
-        <div class = "item">
-          <i class = "calendar icon"></i> 2018-10-10
-        </div>
-        <div class = "item">
-          <i class = "eye icon"></i> 2342
-=======
                src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg"
                th:src = "@{${blog.user.avatar}}">
           <div class = "content"><a class = "header m-text-thin" href = "#"
@@ -87,31 +60,18 @@
         <div class = "item">
           <i class = "eye icon"></i>
           <span th:text = "${blog.views}">2342</span>
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
         </div>
       </div>
     </div>
     <!-- 图片 -->
     <div class = "ui attached segment">
       <img alt = "" class = "ui fluid rounded image"
-<<<<<<< HEAD
-           src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg">
-=======
            src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg"
            th:src = "@{${blog.firstPicture}}">
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
     </div>
     <!-- 内容区域 -->
     <div class = "ui attached padded segment">
       <div class = "ui right aligned basic segment">
-<<<<<<< HEAD
-        <div class = "ui orange basic label">原创</div>
-      </div>
-      <h2 class = "ui center aligned header">足球世界</h2>
-      <div class = "typo typo-selection js-toc-content m-padded-lr-responsive m-padded-tb-large" id = "content">
-        <h2 id = "session1">表格区域</h2>
-        <table class = "ui table" summary = "Type.css 排版篇重点">
-=======
         <div class = "ui orange basic label" th:text = "${blog.flag}">原创</div>
       </div>
       <h2 class = "ui center aligned header" th:text = "${blog.title}">足球世界</h2>
@@ -363,7 +323,6 @@
         <h3 id = "section3">三、附录</h3>
         <h5 id = "appendix1">1、<i class = "serif">Typo.css</i> 排版偏重点</h5>
         <table class = "ui table" summary = "Typo.css 排版偏重点">
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
           <thead>
           <tr>
             <th>类型</th>
@@ -374,12 +333,6 @@
           </thead>
           <tbody>
           <tr>
-<<<<<<< HEAD
-            <tb>类型</tb>
-            <tb>类型</tb>
-            <tb>类型</tb>
-            <tb>类型</tb>
-=======
             <th rowspan = "15">基础标签</th>
             <td>标题</td>
             <td><code>h1</code> ～ <code>h6</code></td>
@@ -515,80 +468,10 @@
           </tr>
           <tr>
             <td colspan = "3">（5）默认字体色彩，目前采用 <code>#333</code> 在各种浏览显示比较好</td>
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
           </tr>
           </tbody>
         </table>
 
-<<<<<<< HEAD
-        <!-- 代码高亮-->
-        <pre><code class = "language-css">p {color : red}</code></pre>
-        <pre><code class = "language-css">p {color : red}</code></pre>
-
-        <h2 id = "session2">内容区域2</h2>
-        <p>
-          人人都渴望成功，而且是越快速越好，谁想失败？且失败还要趁早？其实道理很简单，你一定很早就知道。简单的可能你都不会相信，甚至不屑。是什么呢？
-          失败乃成功之母
-          这个我们从小就知道的道理。但是这句话的意思你真的理解吗？《汉语成语大词典》中对“失败乃成功之母”是这样解释的：母，先导。它指人唯有善于从失败中吸取经验教训，才能获得成功。失败是成功的先导，失败是成功的基础。（母的意义不是母亲而是基础）。
-          难道所有成功必须经历失败吗？
-          你难免会有这样的疑问？那我们这样想一下，古往今来有谁轻而易举的获得过很大的成功？再者说不费点劲，不经历过失败的就能轻松做成的事儿，真的还有那么大的价值吗？有一定价值的事情不是那么轻易就能做成，能轻易做成的事情，很多人都可以做成，价值某种程度上就会减小。所以我这样理解：有价值的成功，不会轻易获得，必然要先经历失败，再翻译下就是：失败是成功的起点，没有经历失败之前你都没有进入通往成功的跑道，所以某种意义上来说，失败是必然存在的，是通往成功的阶梯。既然这样，我们有什么理由不坦然面对失败，甚至高兴的去面对失败呢？
-          失败要趁早，越早失败才有可能早点遇到成功，那么话又说回来，失败难到不是很容易就能做到的事情吗？但是你是否想过，一件事情失败的前提条件是实实在在的去做这件事儿，这样你才有了失败的机会，有了失败，你才有了吸取教训的机会，才有希望遇到成功。任何事儿不去做，失败你都没得机会，就别想要成功啦。快速开始，才是开始成功的正确姿势，如何快速开始呢？
-          不要想太多，勇敢尝试
-          头天晚上想了千条路，早上醒来走老路。总有那么一些人（有时候我也是这样）永远让事情止于意淫。而且还会找各种理由说服自己：“还没准备好”，“这样做到底行不行？”，“有人成功过没”…
-          永远迈不出去第一步，所以就沦为“凡人”。人生苦短，不要想太多，想好了就去做，这样才有成功的机会
-          放下你臆想的完美主义
-          臆想的完美主义，只会让你更纠结，更痛苦，让你在成功的路上越走越远。
-          高中那会总是企图做一个完美学习计划，然后臆想通过执行计划可以把成绩飞速提升，然而都以失败告终，因为一直在做计划的路上，要不就是在修改计划的路上。
-          任何事情不会一下子就会做到极致，谁又是一开始就能把事情做到完美呢。只要开始做，哪怕一天一点点，都会离成功越来越近。这些你都懂，然卵用。因为你没有放下臆想的完美主义。赶快，搞起来吧，骚年
-          专注目标，不要朝三暮四
-          正确的做事方法，要专注于眼前的目标，不要做着这个事情，还想着其他的事情，搞得啥都没做好，还浪费了我们宝贵的注意力。集中注意力先把你眼前力所能及的事情做好，让自己得到正反馈，这样才能得到鼓励，动力越来越足，事情越做越好。否则，朝三暮四去了，会把你空虚一大把。
-        </p>
-        <h2 id = "session3">内容区域1.2</h2>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut aspernatur placeat natus fugiat
-          voluptatem voluptates quisquam autem at modi? Consequuntur ab eligendi, natus voluptate praesentium
-          reiciendis. Doloribus velit odit porro.
-          Nihil eveniet vitae illo cumque quisquam itaque quis, voluptatem fugiat alias inventore soluta unde
-          perspiciatis, aliquid dolorem possimus iure, a ducimus dolore sequi. Doloremque vero architecto
-          praesentium ex iusto eaque!
-        </p>
-        <h3 id = "session3-1">内容区域3-1</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum eum unde optio quia corrupti iure
-          saepe hic id laborum odit animi dignissimos aspernatur minus doloremque, accusantium doloribus
-          molestias facilis sunt?
-          Sunt eos repellat sit provident odio quidem vel qui dolores autem, omnis reprehenderit odit nobis
-          velit veritatis aspernatur id. Illo iusto a amet quos impedit. Quibusdam autem velit voluptas
-          veniam!
-          Itaque fugit, reiciendis eius dolore vitae, quis dignissimos harum consectetur, odit in
-          reprehenderit libero animi id cupiditate sunt deleniti molestiae quia aliquam quos tempore ipsam? Ut
-          possimus necessitatibus quis similique.
-          Cumque minus iure tempora quibusdam fuga voluptate! Libero, aperiam, alias veniam aliquid beatae
-          delectus nam consequuntur quos, asperiores quo distinctio. Aspernatur ex eaque maiores architecto
-          iusto voluptate enim perspiciatis fuga?
-        </p>
-      </div>
-      <!-- 标签 -->
-      <div class = "m-padded-lr">
-        <div class = "ui basic teal left pointing label">方法论</div>
-      </div>
-      <!-- 赞善 -->
-      <div class = "ui center aligned basic segment">
-        <button class = "ui orange basic circular button" id = "payButton">赞赏</button>
-      </div>
-      <div class = "ui payQR flowing popup transition hidden">
-        <div class = "ui orange basic label">
-          <div class = "ui images" style = " font-size: inherit !important; ">
-            <div class = "image">
-              <img alt = "" class = "ui rounded bordered image" src = "../static/images/u11.jpg"
-                   style = "width: 120px">
-              <div>支付包</div>
-            </div>
-            <div class = "image">
-              <img alt = "" class = "ui  bordered image rounded" src = "../static/images/u11.jpg"
-                   style = "width: 120px">
-              <div>微信</div>
-=======
         <h5 id = "appendix2">2、开源许可</h5>
       </div>
 
@@ -619,26 +502,11 @@
                      style = "width: 120px">
                 <div>微信</div>
               </div>
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
             </div>
           </div>
         </div>
       </div>
     </div>
-<<<<<<< HEAD
-    <div class = "ui attached positive message">
-      <div class = "ui middle aligned grid">
-        <div class = "eleven wide column">
-          <ul class = "list">
-            <li>作者：crqYUE (联系作者)</li>
-            <li>发布时间：</li>
-            <li>版权声明</li>
-            <li>作者：crqYUE (联系作者)</li>
-          </ul>
-        </div>
-        <div class = "five wide column">
-          <img alt = "" class = "ui right floated rounded bordered image" src = "../static/images/u11.jpg"
-=======
 
 
     <div class = "ui attached positive message" th:if = "${blog.shareStatement}">
@@ -656,65 +524,10 @@
         <div class = "five wide column">
           <img alt = "" class = "ui right floated rounded bordered image" src = "/static/images/u11.jpg"
                th:src = "@{/static/images/u11.jpg}"
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
                style = "width:110px;">
         </div>
       </div>
     </div>
-<<<<<<< HEAD
-    <div class = "ui bottom attached segment" id = "comment-container">
-      <div class = "ui teal segment">
-        <div class = "ui comments">
-          <h3 class = "ui dividing header">Comments</h3>
-          <div class = "comment">
-            <a class = "avatar">
-              <img src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg">
-            </a>
-            <div class = "content">
-              <a class = "author">Matt</a>
-              <div class = "metadata">
-                <span class = "date">Today at 5:42PM</span>
-              </div>
-              <div class = "text">
-                How artistic!
-              </div>
-              <div class = "actions">
-                <a class = "reply">回复</a>
-              </div>
-            </div>
-          </div>
-          <div class = "comment">
-            <a class = "avatar">
-              <img src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg">
-            </a>
-            <div class = "content">
-              <a class = "author">Elliot Fu</a>
-              <div class = "metadata">
-                <span class = "date">Yesterday at 12:30AM</span>
-              </div>
-              <div class = "text">
-                <p>This has been very useful for my research. Thanks as well!</p>
-              </div>
-              <div class = "actions">
-                <a class = "reply">回复</a>
-              </div>
-            </div>
-            <div class = "comments">
-              <div class = "comment">
-                <a class = "avatar">
-                  <img src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg">
-                </a>
-                <div class = "content">
-                  <a class = "author">Jenny Hess</a>
-                  <div class = "metadata">
-                    <span class = "date">Just now</span>
-                  </div>
-                  <div class = "text">
-                    Elliot you are always so right :)
-                  </div>
-                  <div class = "actions">
-                    <a class = "reply">回复</a>
-=======
 
 
     <div class = "ui bottom attached segment" th:if = "${blog.commentabled}">
@@ -770,35 +583,10 @@
                          th:attr = "data-commentid=${reply.id},data-commentnickname=${reply.nickname}"
                          onclick = "reply(this)">回复</a>
                     </div>
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
                   </div>
                 </div>
               </div>
             </div>
-<<<<<<< HEAD
-          </div>
-          <div class = "comment">
-            <a class = "avatar">
-              <img src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg">
-            </a>
-            <div class = "content">
-              <a class = "author">Joe Henderson</a>
-              <div class = "metadata">
-                <span class = "date">5 days ago</span>
-              </div>
-              <div class = "text">
-                Dude, this is awesome. Thanks so much
-              </div>
-              <div class = "actions">
-                <a class = "reply">回复</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- 表单 -->
-      <div class = "ui form">
-=======
             <!--/*-->
             <div class = "comment">
               <a class = "avatar">
@@ -864,7 +652,6 @@
       <div class = "ui form">
         <input type = "hidden" name = "blog.id" th:value = "${blog.id}">
         <input type = "hidden" name = "parentComment.id" value = "-1">
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
         <div class = "field">
           <textarea name = "content" placeholder = "请输入评论信息..."></textarea>
         </div>
@@ -872,24 +659,13 @@
           <div class = "field m-mobile-wide m-margin-bottom-small">
             <div class = "ui left icon input">
               <i class = "user icon"></i>
-<<<<<<< HEAD
-              <input name = "nickname" placeholder = "姓名" type = "text">
-=======
               <input type = "text" name = "nickname" placeholder = "姓名"
                      th:value = "${session.user}!=null ? ${session.user.nickname}">
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
             </div>
           </div>
           <div class = "field m-mobile-wide m-margin-bottom-small">
             <div class = "ui left icon input">
               <i class = "mail icon"></i>
-<<<<<<< HEAD
-              <input name = "email" placeholder = "邮箱" type = "text">
-            </div>
-          </div>
-          <div class = "field m-mobile-wide m-margin-bottom-small">
-            <button class = "ui teal button m-mobile-wide"><i class = "edit icon"></i>发布评论</button>
-=======
               <input type = "text" name = "email" placeholder = "邮箱"
                      th:value = "${session.user}!=null ? ${session.user.email}">
             </div>
@@ -898,7 +674,6 @@
             <button id = "commentpost-btn" type = "button" class = "ui teal button m-mobile-wide"><i
               class = "edit icon"></i>发布
             </button>
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
           </div>
         </div>
       </div>
@@ -907,11 +682,7 @@
 </div>
 
 
-<<<<<<< HEAD
-<div class = "m-padded m-fixed m-right-bottom" id = "toolbar">
-=======
 <div class = "m-padded m-fixed m-right-bottom" id = "toolbar" style = "display: none">
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
   <div class = "ui vertical icon buttons">
     <button class = "ui teal toc button" type = "button">目录</button>
     <!-- 锚链接 -->
@@ -930,30 +701,17 @@
 
 
 <div class = "ui wechat-qr flowing popup transition hidden" id = "qrcode" style = "width: 130px !important;">
-<<<<<<< HEAD
-  <!-- <img src = "./static/images/u11.jpg" alt = "" class = "ui rounded image" style="width: 120px;"> -->
-=======
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 </div>
 
 
 <!-- 底部footer -->
-<<<<<<< HEAD
-<footer class = "ui inverted vertical segment m-padded-tb-massive m-shadow-small">
-=======
-<footer th:replace = "_fragments :: footer"
-        class = "ui inverted vertical segment m-padded-tb-massive m-shadow-small footer">
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
+<footer th:replace = "_fragments :: footer" class = "ui inverted vertical segment m-padded-tb-massive m-shadow-small">
   <div class = "ui center aligned container">
     <div class = "ui inverted divided stackable grid">
       <div class = "three wide column">
         <div class = "ui inverted link list">
           <div class = "item">
-<<<<<<< HEAD
-            <img alt = "" class = "ui rounded image" src = '../static/images/u11.jpg' style = "width: 110px;">
-=======
             <img alt = "" class = "ui rounded image" src = '/static/images/u11.jpg' style = "width: 110px;">
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
           </div>
         </div>
       </div>
@@ -986,22 +744,11 @@
 </footer>
 
 
-<<<<<<< HEAD
-=======
 <!--/*/<th:block th:replace="_fragments :: script">/*/-->
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 <script src = "//cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
 <script src = "//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
 <script src = "//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
 
-<<<<<<< HEAD
-<script src = "../static/lib/prism/prism.js"></script>
-<script src = "../static/lib/tocbot/tocbot.min.js"></script>
-<script src = "../static/lib/qrcode/qrcode.min.js"></script>
-<script src = "../static/lib/waypoints/jquery.waypoints.min.js"></script>
-
-<script>
-=======
 <script src = "/static/lib/prism/prism.js"></script>
 <script src = "/static/lib/tocbot/tocbot.min.js"></script>
 <script src = "/static/lib/qrcode/qrcode.min.js"></script>
@@ -1010,7 +757,6 @@
 
 
 <script th:inline = "javascript">
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 	$(".menu.toggle").click(function () {
 		$(".m-item").toggleClass('m-mobile-hide');
 	});
@@ -1021,8 +767,6 @@
 		position: 'bottom center'
 	});
 
-<<<<<<< HEAD
-=======
 
 	// 文本排版
 	tocbot.init({
@@ -1035,44 +779,24 @@
 	});
 
 
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 	$('.toc.button').popup({
 		popup: $('.toc-container.popup'),
 		on: 'click',
 		position: 'left center'
 	});
 
-<<<<<<< HEAD
-	// 文本排版
-	tocbot.init({
-		tocSelector: '.js-toc',
-		contentSelector: '.js-toc-content',
-		headingSelector: 'h1,h2,h3'
-	});
-
-
-	$('.wechat').popup({
-		popup: $('.wechat-qr'),
-		position: 'left center',
-=======
 
 	$('.wechat').popup({
 		popup: $('.wechat-qr'),
 		position: 'left center'
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 	});
 
 
 	// 二维码生成器
-<<<<<<< HEAD
-	var qrcode = new QRCode("qrcode", {
-		text: "http://jindo.dev.naver.com/collie",
-=======
 	var serurl = /*[[#{blog.serurl}]]*/"127.0.0.1:8081";
 	var url = /*[[@{/blog/{id}(id=${blog.id})}]]*/"";
 	var qrcode = new QRCode("qrcode", {
 		text: serurl + url,
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 		width: 110,
 		height: 110,
 		colorDark: "#000000",
@@ -1080,10 +804,6 @@
 		correctLevel: QRCode.CorrectLevel.H
 	});
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 	// 平滑检测
 	$('#toTop-button').click(function () {
 		$(window).scrollTo(0, 500);
@@ -1103,8 +823,6 @@
 	});
 
 
-<<<<<<< HEAD
-=======
 	//评论表单验证
 	$('.ui.form').form({
 		fields: {
@@ -1178,7 +896,6 @@
 	}
 
 
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 </script>
 
 

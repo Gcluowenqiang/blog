@@ -48,15 +48,11 @@ spring:
       min-idle: 0
   # 连接超时时间（毫秒）
   timeout: 5000ms
-  #配置国际化消息源(应用场景后台通过重定向Thymeleaf时,出现??message_zh_CN??字样)
-  messages:
-    basename: messages
-    encoding: utf-8
 
 
 
 
-#mybatis
+
 mybatis:
   #实体类取别名
   type-aliases-package: com.crq.bean
@@ -68,7 +64,7 @@ mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
   configuration:
     #驼峰命名
-    map-underscore-to-camel-case: true
+    map-underscore-to-camel-case: false
     # 日志
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 

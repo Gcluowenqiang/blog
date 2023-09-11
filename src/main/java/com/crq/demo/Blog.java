@@ -61,6 +61,19 @@ public class Blog {
   @Transient
   private String tagIds;
 
+  private String description;
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public Blog() {
+  }
+
   public String getTagIds() {
     return tagIds;
   }
@@ -69,8 +82,6 @@ public class Blog {
     this.tagIds = tagIds;
   }
 
-  public Blog() {
-  }
 
   public Long getId() {
     return id;
@@ -249,7 +260,12 @@ public class Blog {
       ", recommend=" + recommend +
       ", createTime=" + createTime +
       ", updateTime=" + updateTime +
+      ", type=" + type +
+      ", tags=" + tags +
+      ", user=" + user +
+      ", comments=" + comments +
+      ", tagIds='" + tagIds + '\'' +
+      ", description='" + description + '\'' +
       '}';
   }
-
 }

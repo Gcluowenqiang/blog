@@ -1,9 +1,5 @@
 package com.crq.controller;
 
-<<<<<<< HEAD
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-=======
 import com.crq.demo.Blog;
 import com.crq.service.BlogService;
 import com.crq.service.TagService;
@@ -21,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 
 /**
  * @author limi
@@ -29,24 +24,6 @@ import java.util.List;
  */
 @Controller
 public class IndexController {
-<<<<<<< HEAD
-
-  @GetMapping("/")
-  public String index() {
-//        int i = 9/0;
-//        String blog = null;
-//        if (blog == null) {
-//            throw  new NotFoundException("博客不存在");
-//        }
-    return "index";
-  }
-
-  @GetMapping("/blog")
-  public String blog() {
-    return "blog";
-  }
-
-=======
   @Autowired
   private BlogService blogService;
 
@@ -83,12 +60,4 @@ public class IndexController {
     return "blog";
   }
 
-
-  @GetMapping("/footer/newblog")
-  public String newblogs(Model model) {
-    model.addAttribute("newblogs", blogService.listRecommendBlogTop(3));
-    return "_fragments :: newblogList";
-  }
-
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 }

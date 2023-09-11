@@ -2,32 +2,14 @@
 spring:
   thymeleaf:
     mode: HTML
-<<<<<<< HEAD
-    cache: false
-    encoding: UTF-8
-    servlet:
-      content-type: text/html
-  profiles:
-    active: test
-=======
   #    cache: true
   #    encoding: UTF-8
   profiles:
     active: test
-  messages:
-    basename: i18n/messages
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
   mvc:
     static-path-pattern: /static/**
   #解决升级spring Boot2.6后,因循环引用导致启动时报错的问题
   main:
     allow-circular-references: true
 
-<<<<<<< HEAD
-
-image:
-  path: F:/image
-
-=======
 comment.avatar: /static/images/u11.jpg
->>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7

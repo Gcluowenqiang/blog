@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
 /**
  * BlogService
@@ -16,7 +17,15 @@ import java.lang.reflect.InvocationTargetException;
 public interface BlogService {
   Blog getBlog(Long id);
 
+  Blog getAndConvert(Long id) throws InvocationTargetException, IllegalAccessException;
+
   Page<Blog> listBlog(Pageable pageable, BlogQuery blog);
+
+  Page<Blog> listBlog(Pageable pageable);
+
+  Page<Blog> listBlog(String query, Pageable pageable);
+
+  List<Blog> listRecommendBlogTop(Integer size);
 
   Blog saveBlog(Blog blog);
 

@@ -7,8 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 /**
- * @author limi
- * @date 2017/10/22
+ * Created by limi on 2017/10/22.
  */
 public interface CommentRepository extends JpaRepository<Comment, Long> {
 
