@@ -7,6 +7,7 @@ import org.springframework.data.domain.Pageable;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import java.util.Map;
 
 /**
  * BlogService
@@ -23,6 +24,8 @@ public interface BlogService {
 
   Page<Blog> listBlog(Pageable pageable);
 
+  Page<Blog> listBlog(Long tagId, Pageable pageable);
+
   Page<Blog> listBlog(String query, Pageable pageable);
 
   List<Blog> listRecommendBlogTop(Integer size);
@@ -32,5 +35,9 @@ public interface BlogService {
   Blog updateBlog(Long ig, Blog blog) throws InvocationTargetException, IllegalAccessException;
 
   void deleteBlog(Long id);
+
+  Map<String, List<Blog>> archiveBlog();
+
+  Long countBlog();
 }
 

@@ -8,6 +8,7 @@ import com.crq.service.BlogService;
 import com.crq.util.MarkdownUtils;
 import com.crq.vo.BlogQuery;
 import org.apache.commons.beanutils.BeanUtils;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -15,13 +16,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.criteria.Predicate;
-import javax.transaction.Transactional;
+import javax.persistence.criteria.*;
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * BlogServiceImpl
@@ -40,6 +39,7 @@ public class BlogServiceImpl implements BlogService {
     return blogRepository.findById(id).get();
   }
 
+  @Transactional
   @Override
   public Blog getAndConvert(Long id) throws InvocationTargetException, IllegalAccessException {
     Blog blog = blogRepository.findById(id).get();
@@ -50,6 +50,9 @@ public class BlogServiceImpl implements BlogService {
     BeanUtils.copyProperties(b, blog);
     String content = b.getContent();
     b.setContent(MarkdownUtils.markdownToHtmlExtensions(content));
+
+
+    blogRepository.updateViews(id);
     return b;
   }
 
@@ -76,6 +79,17 @@ public class BlogServiceImpl implements BlogService {
   @Override
   public Page<Blog> listBlog(Pageable pageable) {
     return blogRepository.findAll(pageable);
+  }
+
+  @Override
+  public Page<Blog> listBlog(Long tagId, Pageable pageable) {
+    return blogRepository.findAll(new Specification<Blog>() {
+      @Override
+      public Predicate toPredicate(@NotNull Root<Blog> root, @NotNull CriteriaQuery<?> cq, @NotNull CriteriaBuilder cb) {
+        Join<Object, Object> join = root.join("tags");
+        return cb.equal(join.get("id"), tagId);
+      }
+    }, pageable);
   }
 
   @Override
@@ -120,5 +134,20 @@ public class BlogServiceImpl implements BlogService {
   @Override
   public void deleteBlog(Long id) {
     blogRepository.deleteById(id);
+  }
+
+  @Override
+  public Map<String, List<Blog>> archiveBlog() {
+    List<String> years = blogRepository.findGroupYear();
+    Map<String, List<Blog>> map = new HashMap<>();
+    for (String year : years) {
+      map.put(year, blogRepository.findByYear(year));
+    }
+    return map;
+  }
+
+  @Override
+  public Long countBlog() {
+    return blogRepository.count();
   }
 }

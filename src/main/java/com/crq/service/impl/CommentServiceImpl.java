@@ -7,8 +7,8 @@ import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -28,7 +28,7 @@ public class CommentServiceImpl implements CommentService {
 
   @Override
   public List<Comment> listCommentByBlogId(Long blogId) throws InvocationTargetException, IllegalAccessException {
-    Sort sort = Sort.by(Sort.Direction.DESC, "createTime");
+    Sort sort = Sort.by(Sort.Direction.ASC, "createTime");
     List<Comment> comments = commentRepository.findByBlogIdAndParentCommentNull(blogId, sort);
     return eachComment(comments);
   }
