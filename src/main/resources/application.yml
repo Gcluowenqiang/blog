@@ -6,6 +6,8 @@ spring:
   #    encoding: UTF-8
   profiles:
     active: test
+  messages:
+    basename: i18n/messages
   mvc:
     static-path-pattern: /static/**
   #解决升级spring Boot2.6后,因循环引用导致启动时报错的问题

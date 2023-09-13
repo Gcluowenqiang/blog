@@ -101,6 +101,9 @@
   <script src = "/static/lib/qrcode/qrcode.min.js" th:src = "@{/static/lib/qrcode/qrcode.min.js}"></script>
   <script src = "/static/lib/waypoints/jquery.waypoints.min.js"
           th:src = "@{/static/lib/waypoints/jquery.waypoints.min.js}"></script>
+  <script>
+	  $('#newblog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
+  </script>
 </th:block>
 
 </body>
