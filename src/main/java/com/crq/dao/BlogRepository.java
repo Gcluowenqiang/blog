@@ -25,6 +25,10 @@ public interface BlogRepository extends JpaRepository<Blog, Long>, JpaSpecificat
   @Query("select b from Blog b where b.title like ?1 or b.content like ?1")
   Page<Blog> findByQuery(String query, Pageable pageable);
 
+
+  /*
+   * @Modifying 用于标识一个方法是修改数据库操作的方法，Spring Data JPA会在执行该方法时，自动创建并执行相应的SQL语句，从而完成数据库的修改操作
+   * */
   @Transactional
   @Modifying
   @Query("update Blog b set b.views = b.views+1 where b.id = ?1")

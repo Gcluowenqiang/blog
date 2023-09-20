@@ -37,7 +37,7 @@
 
 
 <!-- 中间部分 -->
-<div class = "m-container m-padded-tb-large">
+<div class = "m-container m-padded-tb-large animated zoomInDown">
   <div class = "ui container">
     <div class = "ui stackable grid">
       <!-- 博客列表部分 -->
@@ -71,17 +71,20 @@
                   </a>
                 </h3>
                 <p class = "m-text" th:text = "|${blog.description}......|">
-                  正确做好任何一件事情的前提是清晰、正确的理解目标。而事实是，我们很多人很多时候根本没有对目标正确的定义，甚至根本从来就没有想过，只是大家都那么做而已…...</p>
+                  正确做好任何一件事情的前提是清晰、正确的理解目标。而事实是，我们很多人很多时候根本没有对目标正确的定义，甚至根本从来就没有想过，只是大家都那么做而已…...
+                </p>
                 <div class = "ui stackable grid">
                   <div class = "eleven wide column">
                     <div class = "ui mini horizontal link list">
                       <div class = "item">
                         <img alt = ""
-                             class = "ui avatar image"
+                             class = "ui avatar middle aligned image"
                              src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg"
                              th:src = "@{${blog.user.avatar}}">
-                        <div class = "content"><a class = "header m-text-thin" href = "#"
-                                                  th:text = "${blog.user.nickname}">多特蒙德</a>
+                        <div class = "content">
+                          <a class = "header m-text-thin" href = "#" th:text = "${blog.user.nickname}">
+                            多特蒙德
+                          </a>
                         </div>
                       </div>
                       <div class = "item">
@@ -99,10 +102,10 @@
                 </div>
               </div>
 
-              <div class = "five wide column">
+              <div class = "five wide column middle aligned">
                 <a href = "#" target = "_blank" th:href = "@{/blog/{id}(id=${blog.id})}">
                   <img alt = ""
-                       class = "ui rounded image"
+                       class = "ui middle aligned rounded image"
                        src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg"
                        th:src = "@{${blog.firstPicture}}">
                 </a>
@@ -180,13 +183,18 @@
 
 
         <!-- 最新推荐 -->
-        <div class = "ui segments m-margin-top-large">
-          <div class = "ui secondary segment">
+        <div class = "ui segments teal m-margin-top-large">
+          <div class = "ui secondary segment teal">
             <i class = "bookmark icon"></i>最新推荐
           </div>
-          <div class = "ui segment" th:each = "blog : ${recommendBlogs}">
-            <a href = "#" th:href = "@{/blog/{id}(id=${blog.id})}" target = "_blank" class = "m-black m-text-thin"
-               th:text = "${blog.title}">用户故事（User Story）</a>
+          <div class = "ui teal segment">
+            <div class = "ui fluid vertical menu">
+              <div>
+                <a th:each = "blog : ${recommendBlogs}" href = "#" th:href = "@{/blog/{id}(id=${blog.id})}"
+                   target = "_blank" class = "m-black m-text-thin item ui block"
+                   th:text = "${blog.title}">用户故事（User Story）</a>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -194,7 +202,7 @@
         <!-- 二维码 -->
         <h4 class = "ui horizontal divider header m-text-thin m-margin-top-large">扫码关注我</h4>
         <div class = "ui centered card" style = "width: 10em;">
-          <img alt = "" class = "ui rounded image" src = "../static/images/u11.jpg" th:src = "@{static/images/u11.jpg}">
+          <img alt = "" class = "ui rounded image" src = "/static/images/wxqr.jpg" th:src = "@{static/images/wxqr.jpg}">
         </div>
 
       </div>
@@ -211,7 +219,7 @@
       <div class = "three wide column">
         <div class = "ui inverted link list">
           <div class = "item">
-            <img alt = "" class = "ui rounded image" src = '/static/images/u11.jpg' style = "width: 110px;">
+            <img alt = "" class = "ui rounded image" src = '/static/images/wxqr.jpg' style = "width: 110px;">
           </div>
         </div>
       </div>
@@ -249,6 +257,7 @@
 <script src = "//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
 <!--/*/</th:block>/*/-->
 
+
 <script>
 	$(".menu.toggle").click(function () {
 		$(".m-item").toggleClass('m-mobile-hide');
@@ -257,3 +266,4 @@
 </script>
 </body>
 </html>
+

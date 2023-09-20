@@ -19,7 +19,7 @@ import javax.validation.Valid;
 import java.lang.reflect.InvocationTargetException;
 
 /**
- * TypeController
+ * TypeController 后台分类管理
  *
  * @author crqyue
  * @since 2023-08-31 01:28
@@ -30,12 +30,13 @@ public class TypeController {
   @Autowired
   private TypeService typeService;
 
+
   /**
    * @param pageable 分页参数数据由前台后去 指定每页条数 根据id参数进行sort倒叙
    * @return
    */
   @GetMapping("/types")
-  public String types(@PageableDefault(size = 5, sort = {"id"}, direction = Sort.Direction.DESC)
+  public String types(@PageableDefault(size = 8, sort = {"id"}, direction = Sort.Direction.DESC)
                       Pageable pageable,
                       Model model) {
     model.addAttribute("page", typeService.listType(pageable));
@@ -49,6 +50,7 @@ public class TypeController {
     return "/admin/types-input";
   }
 
+  //编辑跳转
   @GetMapping("/types/{id}/input")
   public String editInput(@PathVariable Long id, Model model) {
     model.addAttribute("type", typeService.getType(id));
@@ -84,6 +86,7 @@ public class TypeController {
   }
 
 
+  //更新
   @PostMapping("/types/{id}")
   public String editPost(@Valid Type type, BindingResult result, @PathVariable Long id, RedirectAttributes attributes) throws InvocationTargetException, IllegalAccessException {
     //增加前校验表中的分类名称是否重复
@@ -104,6 +107,7 @@ public class TypeController {
     return "redirect:/admin/types";
   }
 
+  //delete
   @GetMapping("/types/{id}/delete")
   public String delete(@PathVariable Long id, RedirectAttributes attributes) {
     typeService.deleteType(id);

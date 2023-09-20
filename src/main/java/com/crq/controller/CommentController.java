@@ -31,6 +31,7 @@ public class CommentController {
   @Value("${comment.avatar}")
   private String avatar;
 
+  //单条数据查询
   @GetMapping("/comments/{blogId}")
   public String comments(@PathVariable Long blogId, Model model) throws InvocationTargetException, IllegalAccessException {
     model.addAttribute("comments", commentService.listCommentByBlogId(blogId));
@@ -38,6 +39,7 @@ public class CommentController {
   }
 
 
+  //save
   @PostMapping("/comments")
   public String post(Comment comment, HttpSession session) {
     System.out.println("---------------------------" + avatar);
@@ -51,7 +53,7 @@ public class CommentController {
       comment.setAvatar(avatar);
     }
     commentService.saveComment(comment);
-    return "redirect:/comments/" + blogId;
+    return "redirect:comments/" + blogId;
   }
 
 

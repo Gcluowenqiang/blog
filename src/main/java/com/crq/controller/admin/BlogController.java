@@ -21,7 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.http.HttpSession;
 
 /**
- * BlogController
+ * BlogController 后台博客管理
  *
  * @author crqyue
  * @since 2023-08-31 00:12
@@ -40,14 +40,17 @@ public class BlogController {
   @Autowired
   private TagService tagService;
 
+
+  //blog-findAll
   @GetMapping("/blogs")
-  public String blogs(@PageableDefault(size = 2, sort = {"updateTime"}, direction = Sort.Direction.DESC) Pageable pageable,
+  public String blogs(@PageableDefault(size = 8, sort = {"updateTime"}, direction = Sort.Direction.DESC) Pageable pageable,
                       BlogQuery blog, Model model) {
     model.addAttribute("types", typeService.listType());
     model.addAttribute("page", blogService.listBlog(pageable));
     return LIST;
   }
 
+  //博客是否为推荐(以推荐状态作为条件的findAll)
   @PostMapping("/blogs/search")
   public String search(@PageableDefault(size = 8, sort = {"updateTime"}, direction = Sort.Direction.DESC) Pageable pageable,
                        BlogQuery blog, Model model) {
@@ -56,6 +59,7 @@ public class BlogController {
     return "admin/blogs :: blogList";
   }
 
+  //博客save跳转
   @GetMapping("/blogs/input")
   public String input(Model model) {
     setTypeAndTag(model);
@@ -63,11 +67,14 @@ public class BlogController {
     return INPUT;
   }
 
+  //type和tag-findall
   private void setTypeAndTag(Model model) {
     model.addAttribute("types", typeService.listType());
     model.addAttribute("tags", tagService.listTag());
   }
 
+
+  //博客编辑前查询数据，以进行回显
   @GetMapping("/blogs/{id}/input")
   public String editInput(Model model, @PathVariable Long id) {
     setTypeAndTag(model);
@@ -77,7 +84,7 @@ public class BlogController {
     return INPUT;
   }
 
-
+  //博客添加-编辑
   @PostMapping("/blogs")
   public String post(Blog blog, RedirectAttributes attributes, HttpSession session) {
     //拿到登录用户
@@ -95,6 +102,7 @@ public class BlogController {
     return REDIRECT_LIST;
   }
 
+  //博客删除
   @GetMapping("/blogs/{id}/delete")
   public String delete(@PathVariable Long id, RedirectAttributes attributes) {
     blogService.deleteBlog(id);

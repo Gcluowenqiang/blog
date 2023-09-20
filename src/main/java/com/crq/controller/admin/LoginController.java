@@ -14,7 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.http.HttpSession;
 
 /**
- * LoginController
+ * LoginController 后台登录管理
  *
  * @author crqyue
  * @since 2023-08-30 22:59

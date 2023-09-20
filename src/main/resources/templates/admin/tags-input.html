@@ -49,7 +49,7 @@
 </div>
 
 <!--中间内容-->
-<div class = "m-container-small m-padded-tb-big">
+<div class = "m-container-small m-padded-tb-big animated slideInDown">
   <div class = "ui container">
     <form action = "#" method = "post" th:object = "${tag}"
           th:action = "*{id}==null ? @{/admin/tags} : @{/admin/tags/{id}(id=*{id})} " class = "ui form">
@@ -78,14 +78,7 @@
   </div>
 </div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 <!--底部footer-->
 <footer th:replace = "admin/_fragments :: footer" class = "ui inverted vertical segment m-padded-tb-massive footer">
   <div class = "ui center aligned container">
@@ -93,7 +86,7 @@
       <div class = "three wide column">
         <div class = "ui inverted link list">
           <div class = "item">
-            <img src = "/static/images/u11.jpg" class = "ui rounded image" alt = "" style = "width: 110px">
+            <img src = "/static/images/cr7" class = "ui rounded image" alt = "" style = "width: 110px">
           </div>
         </div>
       </div>

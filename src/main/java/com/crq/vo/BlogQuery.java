@@ -1,7 +1,7 @@
 package com.crq.vo;
 
 /**
- * BlogQuery
+ * BlogQuery 辅助类-推荐状态
  *
  * @author crqyue
  * @since 2023-08-31 19:06

@@ -19,7 +19,7 @@ import javax.validation.Valid;
 import java.lang.reflect.InvocationTargetException;
 
 /**
- * TagController
+ * TagController 后台标签管理
  *
  * @author crqyue
  * @since 2023-08-31 13:57
@@ -30,20 +30,23 @@ public class TagController {
   @Autowired
   private TagService tagService;
 
+  //findAll
   @GetMapping("/tags")
-  public String tags(@PageableDefault(size = 3, sort = {"id"}, direction = Sort.Direction.DESC)
+  public String tags(@PageableDefault(size = 8, sort = {"id"}, direction = Sort.Direction.DESC)
                      Pageable pageable, Model model) {
     model.addAttribute("page", tagService.listTag(pageable));
     System.out.println(tagService.listTag(pageable).getContent());
     return "admin/tags";
   }
 
+  //save跳转
   @GetMapping("/tags/input")
   public String input(Model model) {
     model.addAttribute("tag", new Tag());
     return "admin/tags-input";
   }
 
+  //编辑前单条数据查询
   @GetMapping("/tags/{id}/input")
   public String editInput(@PathVariable Long id, Model model) {
     model.addAttribute("tag", tagService.getTag(id));
@@ -51,6 +54,7 @@ public class TagController {
   }
 
 
+  //save
   @PostMapping("/tags")
   public String post(@Valid Tag tag, BindingResult result, RedirectAttributes attributes) {
     Tag tag1 = tagService.getTagByName(tag.getName());
@@ -70,6 +74,7 @@ public class TagController {
   }
 
 
+  //单条数据进行编辑
   @PostMapping("/tags/{id}")
   public String editPost(@Valid Tag tag, BindingResult result, @PathVariable Long id, RedirectAttributes attributes) throws InvocationTargetException, IllegalAccessException {
     Tag tag1 = tagService.getTagByName(tag.getName());
@@ -89,6 +94,7 @@ public class TagController {
     return "redirect:/admin/tags";
   }
 
+  //delete
   @GetMapping("/tags/{id}/delete")
   public String delete(@PathVariable Long id, RedirectAttributes attributes) {
     tagService.deleteTag(id);
