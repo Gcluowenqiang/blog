@@ -5,7 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+<<<<<<< HEAD
  * Created by limi on 2017/10/14.
+=======
+ * @author limi
+ * @date 2017/10/14
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
  */
 @Entity
 @Table(name = "t_tag")

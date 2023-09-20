@@ -1,15 +1,28 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang = "en">
+=======
+<html lang = "en" xmlns:th = "http://www.w3.org/1999/xhtml">
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 <head th:replace = "_fragments :: head(~{::title})">
   <meta charset = "UTF-8">
   <meta content = "width=device-width, initial-scale=1.0" name = "viewport">
   <title>首页</title>
+<<<<<<< HEAD
   <link href = "../static/css/index.css" rel = "stylesheet">
   <link href = "//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css" rel = "stylesheet">
+=======
+  <link href = "//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css" rel = "stylesheet">
+  <link href = "/static/css/index.css" rel = "stylesheet">
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 
 </head>
 <body>
 <!-- 导航 -->
+<<<<<<< HEAD
+=======
+<!-- th:replace = "_fragments :: menu(1)" -->
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 <nav th:replace = "_fragments :: menu(1)" class = "ui inverted attached segment m-padded-tb-mini m-shadow-small">
   <div class = "ui container">
     <!--inverted 白色字体  stackable--响应式-堆叠 inverted--悬浮效果-->
@@ -20,10 +33,16 @@
       <a class = "item m-item m-mobile-hide" href = "#"><i class = "tags icon"></i>标签</a>
       <a class = "item m-item m-mobile-hide" href = "#"><i class = "clone icon"></i>归档</a>
       <a class = "item m-item m-mobile-hide" href = "#"><i class = "info icon"></i>关于我</a>
+<<<<<<< HEAD
       <div class = "right item m-item m-mobile-hide">
         <div class = "ui icon inverted transparent input">
           <!--transparent透明-->
           <input placeholder = "Search..." type = "text">
+=======
+      <div class = "right m-item item m-mobile-hide">
+        <div class = "ui icon inverted transparent input m-margin-tb-tiny">
+          <input type = "text" placeholder = "Search....">
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
           <i class = "search link icon"></i>
         </div>
       </div>
@@ -51,7 +70,11 @@
               <div class = "ui teal header">博客</div>
             </div>
             <div class = "right aligned column">
+<<<<<<< HEAD
               共 <h3 class = "ui orange header m-inline-block m-text-thin">14</h3> 篇
+=======
+              共 <h3 class = "ui orange header m-inline-block m-text-thin" th:text = "${page.totalElements}">14</h3> 篇
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
             </div>
           </div>
         </div>
@@ -60,11 +83,25 @@
         <!-- content -->
         <!-- ctrl+- 折叠代码块 +展开代码快 -->
         <div class = "ui attached segment">
+<<<<<<< HEAD
           <div class = "ui padded vertical segment m-padded-tb">
             <div class = "ui mobile reversed stackable grid">
               <div class = "eleven wide column">
                 <h3 class = "hide header">你真的理解什么是财富自由吗？</h3>
                 <p class = "m-text">
+=======
+          <!--           m-padded-tb -->
+          <div class = "ui padded vertical segment m-padded-tb-large" th:each = "blog : ${page.content}">
+            <div class = "ui mobile reversed stackable grid">
+              <div class = "eleven wide column">
+                <h3 class = "hide header">
+                  <a href = "#" th:href = "@{/blog/{id}(id=${blog.id})}" target = "_blank"
+                     class = "m-black" th:text = "${blog.title}">
+                    你真的理解什么是财富自由吗?
+                  </a>
+                </h3>
+                <p class = "m-text" th:text = "|${blog.description}......|">
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
                   正确做好任何一件事情的前提是清晰、正确的理解目标。而事实是，我们很多人很多时候根本没有对目标正确的定义，甚至根本从来就没有想过，只是大家都那么做而已…...</p>
                 <div class = "ui stackable grid">
                   <div class = "eleven wide column">
@@ -72,6 +109,7 @@
                       <div class = "item">
                         <img alt = ""
                              class = "ui avatar image"
+<<<<<<< HEAD
                              src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg">
                         <div class = "content"><a class = "header m-text-thin" href = "#">多特蒙德</a>
                         </div>
@@ -81,17 +119,35 @@
                       </div>
                       <div class = "item">
                         <i class = "eye icon"></i> 2342
+=======
+                             src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg"
+                             th:src = "@{${blog.user.avatar}}">
+                        <div class = "content"><a class = "header m-text-thin" href = "#"
+                                                  th:text = "${blog.user.nickname}">多特蒙德</a>
+                        </div>
+                      </div>
+                      <div class = "item">
+                        <i class = "calendar icon"></i><span th:text = "${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2017-10-01</span>
+                      </div>
+                      <div class = "item">
+                        <i class = "eye icon"></i> <span th:text = "${blog.views}">2342</span>
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
                       </div>
                     </div>
                   </div>
                   <div class = "right aligned five wide column">
                     <a class = "ui teal basic label m-padded-tiny m-text-thin" href = "#"
+<<<<<<< HEAD
                        target = "_blank">足球世界</a>
+=======
+                       target = "_blank" th:text = "${blog.type.name}">足球世界</a>
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
                   </div>
                 </div>
               </div>
 
               <div class = "five wide column">
+<<<<<<< HEAD
                 <a href = "#" target = "_blank">
                   <img alt = ""
                        class = "ui rounded image"
@@ -256,6 +312,13 @@
                   <img alt = ""
                        class = "ui rounded image"
                        src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg">
+=======
+                <a href = "#" target = "_blank" th:href = "@{/blog/{id}(id=${blog.id})}">
+                  <img alt = ""
+                       class = "ui rounded image"
+                       src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg"
+                       th:src = "@{${blog.firstPicture}}">
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
                 </a>
               </div>
             </div>
@@ -264,6 +327,7 @@
 
 
         <!-- footer -->
+<<<<<<< HEAD
         <div class = "ui bottom attached segment">
           <div class = "ui middle aligned two column grid">
             <div class = "column">
@@ -271,10 +335,25 @@
             </div>
             <div class = "right aligned column">
               <a class = "ui mini teal basic button" href = "#">下一页</a>
+=======
+        <div class = "ui bottom attached segment" th:if = "${page.totalPages}>1">
+          <div class = "ui middle aligned two column grid">
+            <div class = "column">
+              <a href = "#" th:href = "@{/(page=${page.number}-1)}" th:unless = "${page.first}"
+                 class = "ui mini teal basic button">上一页</a>
+            </div>
+            <div class = "right aligned column">
+              <a href = "#" th:href = "@{/(page=${page.number}+1)}" th:unless = "${page.last}"
+                 class = "ui mini teal basic button">下一页</a>
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
             </div>
           </div>
         </div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
       </div>
 
 
@@ -289,12 +368,18 @@
                 <i class = "idea icon"></i>分类
               </div>
               <div class = "right aligned column">
+<<<<<<< HEAD
                 <a href = "#" target = "_blank">more <i class = "angle double right icon"></i></a>
+=======
+                <a href = "#" th:href = "@{types/-1}" target = "_blank">more <i
+                  class = "angle double right icon"></i></a>
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
               </div>
             </div>
           </div>
           <div class = "ui teal segment">
             <div class = "ui fluid vertical menu">
+<<<<<<< HEAD
               <a class = "item" href = "#">
                 学习日志
                 <div class = "ui teal basic left pointing label">13</div>
@@ -322,6 +407,12 @@
               <a class = "item" href = "#">
                 学习日志
                 <div class = "ui teal basic left pointing label">13</div>
+=======
+              <a href = "#" th:href = "@{/types/{id}(id=${type.id})}" target = "_blank" class = "item"
+                 th:each = "type : ${types}">
+                <span th:text = "${type.name}">学习日志</span>
+                <div class = "ui teal basic left pointing label" th:text = "${#arrays.length(type.blogs)}">13</div>
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
               </a>
             </div>
           </div>
@@ -335,11 +426,17 @@
                 <i class = "tags icon"></i>标签
               </div>
               <div class = "right aligned column">
+<<<<<<< HEAD
                 <a href = "#" target = "_blank">more <i class = "angle double right icon"></i></a>
+=======
+                <a href = "#" th:href = "@{tags/-1}" target = "_blank">more <i
+                  class = "angle double right icon"></i></a>
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
               </div>
             </div>
           </div>
           <div class = "ui teal segment">
+<<<<<<< HEAD
             <a class = "ui teal basic left pointing label m-margin-tb-tiny" href = "#" target = "_blank">
               方法论
               <div class = "detail">23</div>
@@ -383,11 +480,22 @@
           </div>
         </div>
 
+=======
+            <a href = "#" th:href = "@{/tags/{id}(id=${tag.id})}" target = "_blank"
+               class = "ui teal basic left pointing label m-margin-tb-tiny" th:each = "tag : ${tags}">
+              <span th:text = "${tag.name}">方法论</span>
+              <div class = "detail" th:text = "${#arrays.length(tag.blogs)}">23</div>
+            </a></div>
+        </div>
+
+
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
         <!-- 最新推荐 -->
         <div class = "ui segments m-margin-top-large">
           <div class = "ui secondary segment">
             <i class = "bookmark icon"></i>最新推荐
           </div>
+<<<<<<< HEAD
           <div class = "ui segment">
             <a class = "m-black m-text-thin" href = "#" target = "_blank">用户故事</a>
           </div>
@@ -406,6 +514,19 @@
         <h4 class = "ui horizontal divider header m-text-thin m-margin-top-large">扫码关注我</h4>
         <div class = "ui centered card" style = "width: 10em;">
           <img alt = "" class = "ui rounded image" src = "../static/images/u11.jpg">
+=======
+          <div class = "ui segment" th:each = "blog : ${recommendBlogs}">
+            <a href = "#" th:href = "@{/blog/{id}(id=${blog.id})}" target = "_blank" class = "m-black m-text-thin"
+               th:text = "${blog.title}">用户故事（User Story）</a>
+          </div>
+        </div>
+
+
+        <!-- 二维码 -->
+        <h4 class = "ui horizontal divider header m-text-thin m-margin-top-large">扫码关注我</h4>
+        <div class = "ui centered card" style = "width: 10em;">
+          <img alt = "" class = "ui rounded image" src = "../static/images/u11.jpg" th:src = "@{static/images/u11.jpg}">
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
         </div>
 
       </div>
@@ -415,13 +536,22 @@
 
 
 <!-- 底部footer -->
+<<<<<<< HEAD
 <footer th:replace = "_fragments :: footer" class = "ui inverted vertical segment m-padded-tb-massive m-shadow-small">
+=======
+<footer th:replace = "_fragments :: footer"
+        class = "ui inverted vertical segment m-padded-tb-massive m-shadow-small footer">
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
   <div class = "ui center aligned container">
     <div class = "ui inverted divided stackable grid">
       <div class = "three wide column">
         <div class = "ui inverted link list">
           <div class = "item">
+<<<<<<< HEAD
             <img alt = "" class = "ui rounded image" src = '../static/images/u11.jpg' style = "width: 110px;">
+=======
+            <img alt = "" class = "ui rounded image" src = '/static/images/u11.jpg' style = "width: 110px;">
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
           </div>
         </div>
       </div>
@@ -454,8 +584,15 @@
 </footer>
 
 
+<<<<<<< HEAD
 <script src = "//cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
 <script src = "//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+=======
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+<script src = "//cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src = "//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<!--/*/</th:block>/*/-->
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 
 <script>
 	$(".menu.toggle").click(function () {

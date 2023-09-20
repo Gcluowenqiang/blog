@@ -57,9 +57,38 @@ public class Blog {
   @OneToMany(mappedBy = "blog")
   private List<Comment> comments = new ArrayList<>();
 
+<<<<<<< HEAD
   public Blog() {
   }
 
+=======
+  //不进行数据库映射
+  @Transient
+  private String tagIds;
+
+  private String description;
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public Blog() {
+  }
+
+  public String getTagIds() {
+    return tagIds;
+  }
+
+  public void setTagIds(String tagIds) {
+    this.tagIds = tagIds;
+  }
+
+
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
   public Long getId() {
     return id;
   }
@@ -198,6 +227,32 @@ public class Blog {
     this.comments = comments;
   }
 
+<<<<<<< HEAD
+=======
+  public void init() {
+    this.tagIds = tagsToIds(this.getTags());
+  }
+
+  //1,2,3
+  private String tagsToIds(List<Tag> tags) {
+    if (!tags.isEmpty()) {
+      StringBuffer ids = new StringBuffer();
+      boolean flag = false;
+      for (Tag tag : tags) {
+        if (flag) {
+          ids.append(",");
+        } else {
+          flag = true;
+        }
+        ids.append(tag.getId());
+      }
+      return ids.toString();
+    } else {
+      return tagIds;
+    }
+  }
+
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
   @Override
   public String toString() {
     return "Blog{" +
@@ -214,10 +269,21 @@ public class Blog {
       ", recommend=" + recommend +
       ", createTime=" + createTime +
       ", updateTime=" + updateTime +
+<<<<<<< HEAD
       '}';
   }
 
   public void test() {
     System.out.println("hello");
   }
+=======
+      ", type=" + type +
+      ", tags=" + tags +
+      ", user=" + user +
+      ", comments=" + comments +
+      ", tagIds='" + tagIds + '\'' +
+      ", description='" + description + '\'' +
+      '}';
+  }
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 }

@@ -85,6 +85,7 @@
         </dependency>
 
 
+<<<<<<< HEAD
         <!--逆向工程依赖-->
         <dependency>
             <groupId>org.mybatis.generator</groupId>
@@ -94,6 +95,8 @@
         <!--        -->
 
         
+=======
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
         <!--        mysql-->
         <dependency>
             <groupId>mysql</groupId>
@@ -178,6 +181,7 @@
         </dependency>
 
 
+<<<<<<< HEAD
         <!--Bootstrap的依赖/-->
         <dependency>
             <groupId>org.webjars</groupId>
@@ -186,6 +190,8 @@
         </dependency>
 
 
+=======
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
         <!-- shiro核心依赖 -->
         <!--shrio和thymeleaf集成的扩展依赖，为了能在页面上使用xsln:shrio的标签 -->
         <dependency>
@@ -226,6 +232,7 @@
         <!-- slf4j日志依赖结束 -->
 
 
+<<<<<<< HEAD
         <!--绝对路劲图片回显依赖-->
         <dependency>
             <groupId>commons-io</groupId>
@@ -240,6 +247,8 @@
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
+=======
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -254,6 +263,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+<<<<<<< HEAD
                 <configuration>
                     <excludes>
                         <exclude>
@@ -301,6 +311,9 @@
             </plugin>
 
 
+=======
+            </plugin>
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
         </plugins>
     </build>
 

@@ -1,14 +1,24 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>归档</title>
     <link href="../static/css/index.css" rel="stylesheet">
     <link href="//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css" rel="stylesheet">
+=======
+<html lang = "en" xmlns:th = "http://www.w3.org/1999/xhtml">
+<head th:replace = "_fragments :: head(~{::title})">
+  <meta charset = "UTF-8">
+  <title>归档</title>
+  <link href = "/static/css/index.css" rel = "stylesheet">
+  <link href = "//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css" rel = "stylesheet">
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 </head>
 <body>
 
 <!-- 导航 -->
+<<<<<<< HEAD
 <nav class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
     <div class="ui container">
         <!--inverted 白色字体  stackable--响应式-堆叠 inverted--悬浮效果-->
@@ -32,10 +42,36 @@
     <a class="ui menu toggle black icon button m-right-top m-mobile-show" href="#">
         <i class="sidebar icon"></i>
     </a>
+=======
+<nav th:replace = "_fragments :: menu(5)" class = "ui inverted attached segment m-padded-tb-mini m-shadow-small">
+  <div class = "ui container">
+    <!--inverted 白色字体  stackable--响应式-堆叠 inverted--悬浮效果-->
+    <div class = "ui inverted secondary stackable menu">
+      <h2 class = "ui teal header item">BLOG</h2>
+      <a class = "item m-item m-mobile-hide" href = "#"><i class = "home icon"></i>首页</a>
+      <a class = "item m-item m-mobile-hide" href = "#"><i class = "idea icon"></i>分类</a>
+      <a class = "item m-item m-mobile-hide" href = "#"><i class = "tags icon"></i>标签</a>
+      <a class = "item m-item m-mobile-hide" href = "#"><i class = "clone icon"></i>归档</a>
+      <a class = "item m-item active m-mobile-hide" href = "#"><i class = "info icon"></i>关于我</a>
+      <div class = "right item m-item m-mobile-hide">
+        <div class = "ui icon inverted transparent input">
+          <!--transparent透明-->
+          <input placeholder = "Search..." type = "text">
+          <i class = "search link icon"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- inverted--反转 -->
+  <a class = "ui menu toggle black icon button m-right-top m-mobile-show" href = "#">
+    <i class = "sidebar icon"></i>
+  </a>
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 </nav>
 
 
 <!-- 中间部分 -->
+<<<<<<< HEAD
 <div class="m-container m-padded-tb-large">
     <div class="ui container">
 
@@ -144,6 +180,120 @@
         popup: $('.wechat-qr'),
         position: 'bottom center',
     });
+=======
+<div class = "m-container m-padded-tb-big animated fadeIn">
+  <div class = "ui container">
+
+    <div class = "ui stackable grid">
+
+      <div class = "eleven wide column">
+        <div class = "ui segment">
+          <img alt = "" class = "ui fluid rounded image"
+               src = "https://p2.img.cctvpic.com/photoworkspace/2021/03/10/2021031006454012569.jpg">
+        </div>
+      </div>
+
+      <div class = "five wide column">
+        <div class = "ui top attached segment">
+          <div class = "ui header">关于我</div>
+        </div>
+        <div class = "ui attached segment">
+          <p class = "m-text">
+            李仁密，一个独立开发者，折腾在 0 和 1 世界的大叔；一个终身学习者，誓将学习无限循环. 希望结识可以共同成长的小伙伴.
+          </p>
+          <p class = "m-text">
+            热爱编程，喜欢折腾，正在探索高效学习编程技术的方法...
+          </p>
+        </div>
+        <div class = "ui attached segment">
+          <div class = "ui orange basic left pointing label m-margin-tb-tiny">欧冠</div>
+          <div class = "ui orange basic left pointing label m-margin-tb-tiny">英超</div>
+          <div class = "ui orange basic left pointing label m-margin-tb-tiny">德甲</div>
+          <div class = "ui orange basic left pointing label m-margin-tb-tiny">欧冠</div>
+        </div>
+        <div class = "ui attached segment">
+          <div class = "ui teal basic left pointing label m-margin-tb-tiny">欧冠</div>
+          <div class = "ui teal basic left pointing label m-margin-tb-tiny">英超</div>
+          <div class = "ui teal basic left pointing label m-margin-tb-tiny">德甲</div>
+          <div class = "ui teal basic left pointing label m-margin-tb-tiny">欧冠</div>
+        </div>
+        <div class = "ui bottom attached segment">
+          <a class = "ui circular icon button" href = "#" target = "_blank"><i class = "github icon"></i></a>
+          <a class = "ui wechat circular icon button" href = "#" target = "_blank"><i class = "weixin icon"></i></a>
+          <a class = "ui qq circular icon button" data-content = "1235874" data-position = "bottom center" href = "#"
+             target = "_blank"><i class = "qq icon"></i></a>
+        </div>
+
+        <div class = "ui wechat-qr flowing popup transition hidden">
+          <img alt = "" class = "ui rounded image" src = "/static/images/u11.jpg" style = "width: 100px">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<br><br><br><br><br><br>
+<!-- 底部footer -->
+<footer th:replace = "_fragments :: footer"
+        class = "ui inverted vertical segment m-padded-tb-massive m-shadow-small footer">
+  <div class = "ui center aligned container">
+    <div class = "ui inverted divided stackable grid">
+      <div class = "three wide column">
+        <div class = "ui inverted link list">
+          <div class = "item">
+            <img alt = "" class = "ui rounded image" src = '/static/images/u11.jpg' style = "width: 110px;">
+          </div>
+        </div>
+      </div>
+      <div class = "three wide column">
+        <h4 class = "ui inverted header m-text-thin m-text-spaced">最新博客</h4>
+        <div class = "ui inverted link list">
+          <a class = "item" href = "#">用户故事（User Story）</a>
+          <a class = "item" href = "#">关于刻意练习的清单</a>
+          <a class = "item" href = "#">失败要趁早</a>
+        </div>
+      </div>
+      <div class = "three wide column">
+        <h4 class = "ui inverted header  m-text-thin m-text-spaced">联系我</h4>
+        <div class = "ui inverted link list">
+          <a class = "item" href = "#">Email：lirenmi@163.com</a>
+          <a class = "item" href = "#">QQ：865729312</a>
+        </div>
+      </div>
+      <div class = "seven wide column">
+        <h4 class = "ui inverted header m-text-thin m-text-spaced">Blog</h4>
+        <div class = "ui inverted link list">
+          <p class = "m-opacity-mini m-text-thin m-text-spaced">
+            这是我的个人博客、会分享关于编程、写作、思考相关的任何内容，希望可以给来到这儿的人有所帮助...</p>
+        </div>
+      </div>
+    </div>
+    <div class = "ui inverted section divider "></div>
+    <p class = "m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2016 - 2017 Lirenmi Designed by Lirenmi</p>
+  </div>
+</footer>
+
+
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+<script src = "//cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src = "//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<!--/*/</th:block>/*/-->
+
+<script>
+	$(".menu.toggle").click(function () {
+		$(".m-item").toggleClass('m-mobile-hide');
+	});
+
+	$('.qq').popup();
+
+	$('.wechat').popup({
+		popup: $('.wechat-qr'),
+		position: 'bottom center',
+	});
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 
 
 </script>

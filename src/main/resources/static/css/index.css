@@ -1,5 +1,20 @@
 body {
     background-image: url('/static/images/bg.png') !important;
+<<<<<<< HEAD
+=======
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 100vh !important;
+}
+
+.footer {
+    position: sticky !important;
+    bottom: 0 !important;
+    text-align: center !important;
+    padding: 10px !important;
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 }
 
 
@@ -138,6 +153,12 @@ body {
     color: #333 !important;
 }
 
+<<<<<<< HEAD
+=======
+.m-teal {
+    color: #00B5AD !important;
+}
+>>>>>>> 94ca38ff2d4143a83a2250cb9354ef66afb8fed7
 
 /*shadow--阴影*/
 .m-shadow-small {
